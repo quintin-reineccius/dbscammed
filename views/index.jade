@@ -1,0 +1,38 @@
+doctype html(lang='en')
+head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    title DBScammed.com
+    
+    link(href='http://fonts.googleapis.com/css?family=Jolly+Lodger', rel='stylesheet', type='text/css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css')
+    link(href='stylesheets/style.css', rel='stylesheet')
+  body
+    header
+      .row
+        .title.col-sm-4.col-md-4
+          a(href='/') Don't Be Scammed
+        | &#x9;&#x9;&#x9;&#x9;
+        .search.col-sm-4.col-md-4
+          form(action='/search', method='get')
+            input.form-control(type='search', name='search', placeholder='Seach Scam...')
+        | &#x9;&#x9;&#x9;&#x9;
+        .post.col-sm-4.col-md-4
+          a(href='/new') Post Scam
+    | &#x9;&#x9;
+    main
+      center
+        .row
+          .col-md-12
+            h2 Latest Scams
+      center
+        
+      .col-md-12
+
+        .feed
+          each scam,index in rows
+            h4= scam.title
+            p= scam.description 
+            hr
+          
+    footer
