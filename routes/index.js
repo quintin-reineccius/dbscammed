@@ -4,7 +4,7 @@ var router = express.Router();
 var connection = require('../database')
 
 function query(query,cb){
-  connection.query(query, function(err, rows, fields) {
+  connection.query(query, function(err, rows) {
     if (err) throw err;
     cb(rows)
   })
