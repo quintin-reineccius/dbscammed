@@ -4,6 +4,7 @@ var router = express.Router();
 var connection = require('../database')
 
 function query(query,cb){
+  console.log(query)
   connection.query(query, function(err, rows) {
     if (err) throw err;
     cb(rows)
@@ -19,7 +20,7 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res, next) {
   
   console.log(req.body)
-  query('INSERT INTO scams (title, description) VALUES ("'+req.body.title+'", "'+req.body.description+'")', function(){
+  query("INSERT INTO scams (title,description) VALUES ('"+req.body.title+"', '"+req.body.description+"')", function(){
     res.redirect('/')
   })
   
